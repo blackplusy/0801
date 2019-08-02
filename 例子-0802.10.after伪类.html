@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	div {
+		width: 100px;
+		border:1px solid black;
+	}
+	/*在这个标签最后位置凭空增加一个无语义标签*/
+	div:after {
+		width: 100px;
+		height: 100px;
+		background-color: blue;
+		content: "sailangheiyo!";
+	}
+	</style>
+</head>
+<body>
+	<div>我是div标签</div>
+	我是div标签后面添加的内容
+	<div></div>
+</body>
+</html>
