@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	/*绝对定位 如果他的祖先级元素没有一个是定位元素的话实际他对应的是文档流(body)*/
+	/*如果他的祖先级元素中有定位元素的话，定位偏移量比较的是这个祖先级定位元素(就近原则)*/
+	/*子元素写绝对定位，父元素写相对定位*/
+	/*子绝父相*/
+	.big {
+		width: 200px;
+		height: 200px;
+		border:10px solid black;
+		position: absolute;
+	}
+	.small {
+		width: 100px;
+		height: 100px;
+		background-color: pink;
+		position: absolute;
+		right: 0px;
+		bottom: 0px;
+	}
+	</style>
+</head>
+<body>
+	<div class="big">
+		<div class="small"></div>
+	</div>
+</body>
+</html>
