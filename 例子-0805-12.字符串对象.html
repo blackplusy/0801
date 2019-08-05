@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	var comment="静夜思李白床前明月光,疑是地上霜,举头望明月,低头思故乡.";
+	var partail=comment.substring( 0,3 );
+	// sting.substring(start,stop)
+	// start必须要有，规定需要提取的字符串第一个字符在string中的位置
+	// stop可选，一个非负数，比提取的字符串最后一个字符多1，如果省略这个参数，返回字符串一直到结尾
+	partail=partail.bold();     //标题加粗
+	document.write("<p align=\"center\" >");
+	document.write(partail);	
+	partail=comment.slice(3,5);
+	document.write("<br>");
+	//slice用法：arrayObject.slice(start,end);
+	//返回一个新的数组，包含start到end不包含该元素的arrayobject中元素
+	document.write(partail);
+	partail=comment.slice(5,17);
+	partail=partail.fontcolor("skyblue");//字体颜色设置天蓝色
+	document.write("<br>");	
+	document.write(partail);	
+	partail=comment.slice(17,29);
+	partail=partail.fontcolor("pink");//字体颜色设置少女粉
+	document.write("<br>");	
+	document.write(partail);
+	document.write("</p>");
+	</script>
+</body>
+</html>
