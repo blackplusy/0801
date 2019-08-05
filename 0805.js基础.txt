@@ -83,4 +83,5 @@ c.js的数据类型
 			Global          全局对象，全局函数和全局常量为该对象所有
 		2>日期对象
 		日期对象一个典型应用就是获取当前时间
+		http://www.w3school.com.cn/js/jsref_obj_date.asp
 		
