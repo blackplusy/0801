@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	//十进制转换为其他进制
+	//toString把一个逻辑值转换为字符串并且返回结果
+	// var x=234;
+	// alert(x)
+	// alert(x.toString(8));//转换为8进制数据
+	// alert(x.toString(16));//转换为16进制数据
+	//其他进制转十进制
+	//parseInt解析一个字符串并且返回一个整数
+	var x='110';
+	alert(parseInt(x,2))
+	alert(parseInt(x,8)) //0+8+64==72
+	alert(parseInt(x,16)) //272
+	// 其他转其他
+	// 先用parseInt转换为十进制后再用toString转换为目标进制
+	alert(parseInt('ff',16).toString(2));
+	</script>
+</body>
+</html>
