@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<!-- 例子涉及到的知识点 -->
+	<!-- 1.font标签 -->
+	<!-- 2.input控件  文本框 按钮 -->
+	<!-- 3.js代码在行内调用 -->
+	<!-- 4.js定义函数 -->
+	<!-- 5.调用id的值做判断 -->
+
+	<!-- 设置一个文本输入框和一个按钮进行交互 -->
+	<font color="skyblue">50点卡信息4.5，请确认购买</font>
+	<!-- 普通文本框 -->
+	<input type="text" id="text1" style="width:20px;height:20px">张
+	<!-- 按钮 -->
+	<input type="button" id="button1" value="确认支付" onclick="return button1_onclick()">
+	<script type="text/javascript">
+		function button1_onclick()
+		{
+			//输入数字小于一或者不是数字
+			if ( ( text1.value<1 ) || isNaN( text1.value) )
+			{
+				alert("您的输入有误！");
+				//清空文本框内容
+				text1.value="";
+			}
+			else
+			{
+				alert("您应当支付"+text1.value*4.5+"元");
+			}
+		}
+	</script>
+</body>
+</html>
