@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	function showStudentInfo()
+	{
+		document.write(this.name+" "+this.age+"<br>");
+	}
+	function Student(_name,_age)
+	{
+		this.name=_name;
+		this.age=_age;
+	}
+	var stu1=new Student("tom",18);
+	var stu2=new Student("jerry",20);
+	showStudentInfo.call( stu1 );
+	showStudentInfo.call( stu2 );
+	</script>
+</body>
+</html>
