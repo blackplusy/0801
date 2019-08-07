@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	//常规的for循环语句
+	for ( var i=0;i<5;i++ )
+	{
+		document.write(i);
+	}
+	document.write("<br>");
+	//可选的for循环语句1
+	//for循环中所有表达式都是可选的
+	var i=0;
+	for (;i<9;i++)
+	{
+		document.write(i);
+	}
+	//可选的for循环语句2
+	document.write("<br>");
+	var i=0;
+	for ( ;; )
+	{
+		if ( i>3 )
+		{
+			break;
+		}
+		document.write(i);
+		i++;
+	}
+	document.write("<br>");
+	//可选的for循环语句3
+	for ( var i=0;;i++)
+	{
+		document.write(i);
+		if ( i>6 ) break;
+	}
+	</script>
+</body>
+</html>
