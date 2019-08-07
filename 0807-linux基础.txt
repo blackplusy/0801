@@ -1,0 +1,67 @@
+1.常用架构
+	单机
+	b/s
+	c/s
+2.b/s架构软件的后端
+	a.操作系统
+	b.web服务器
+		apache
+		nginx
+		tomcat
+		iis
+	c.数据库服务器
+		oracle
+		mysql
+		sqlserver
+		mongodb
+3.常见操作系统平台
+	unix     ios  mac os
+	linux    
+		redhat   centos
+		suse     opensuse
+		ubuntu   kali  backtrack
+		麒麟     红旗
+		redstar  COS
+		安卓
+	windows
+		server
+			server 03 08 12 16
+		desktop
+			win7  winxp  win10  win8 .....
+4.虚拟化
+	虚拟机
+		vmware  速度慢,稳定
+		vbox    速度快,不太稳定
+		kvm     linux
+	D:\\测试用软件\Vmware11\
+	虚拟机安装(傻瓜安装)
+	作用:让虚拟机内部的操作系统相信自己是运行在真实硬件上的
+
+5.linux基础
+	a.linux的管理员
+		root
+	b.目录简介
+		目录:linux下的文件夹
+		linux下一切皆为文件
+		家目录:用户登陆系统后默认所在目录
+			/   		根
+				/bin	存放普通用户命令
+				/sbin   存放管理员命令
+				/boot	存放系统引导时候所需文件
+				/dev    存放系统硬件的位置
+				/etc	存放配置文件位置
+				/home   普通用户的家目录所在目录
+				/lib  lib64 存放库文件的位置
+				/mnt	系统默认的挂载点
+				/opt /usr 普通用户操作所在目录
+				/root   管理员的家目录
+				/tmp    存放临时文件的位置
+				/var    存放系统日志信息位置
+	c.终端简介
+		[root@localhost ~]#
+			root    	当前登陆的用户用户名(root)
+			@localhost  当前系统的主机名(localhost)
+			~          	当前所在目录的名字(~代表家目录)
+			#           当前用户的权限是管理员
+			$           当前用户权限是普通用户
+
