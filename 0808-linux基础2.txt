@@ -1,0 +1,38 @@
+1.命令回顾
+who
+whoami
+pwd
+cd
+ls
+man
+info
+
+2.linux的网络设置
+	a.linux的网络设置
+		a1.准备
+			在win中搜索一个和主机同网段的IP
+			常看win的IP(win+r--cmd--ipconfig)【192.168.7.x {1-254}】
+			搜索IP(win+r--cmd--ping )   【192.168.7.144】
+				如果出现无法访问或者超时说明该IP没人使用，可以用于linux操作系统
+		a2.查看linux的IP地址
+			ifconfig         查看当前激活的网卡信息
+			ifconfig eth0    查看linux中第一块网卡信息
+		a3.设置linux的IP
+			1>临时设置(重启网络后失效)
+				ifconfig eth0 192.168.7.144 
+				service network restart(重启网络服务)
+			2>命令设置(重启网络后生效)
+				setup--网络设置--edit devices--eth0--名称、设备不要改动，取消dhcp(空格)、填写IP地址和子网掩码--ok--save--save&quit--退出--service network restart
+				注意:获取IP地址方式(dhcp 自动分配、static 静态设置)
+			3>配置文件设置
+
+	b.虚拟机的网络设置
+		右键标签--设置--网络适配器--桥接、复制物理网络连接状态--确定
+			1>桥接模式:客户机可以和局域网中其他主机进行通信
+			2>网络地址转换:客户机通过ip地址转换进行上网，无法和局域网中其他主机进行通信
+			3>仅主机:客户机和宿主机之间私有通道，无法和和局域网中其他主机进行通信
+	c.测试网络是否联通
+		win:win+r--cmd--ping linux的IP
+		linux:ping  windows的IP
+		在win中用远程连接linux的工具来连接
+		
