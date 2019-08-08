@@ -35,4 +35,40 @@ info
 		win:win+r--cmd--ping linux的IP
 		linux:ping  windows的IP
 		在win中用远程连接linux的工具来连接
-		
+3.目录操作
+	cd /opt
+	创建(mkdir)
+		mkdir a   
+			当前目录下创建空目录a
+		mkdir b /opt/c
+			当前目录下创建空目录b,/opt下创建空目录c
+		mkdir "d  e"
+			当前目录下创建空目d  e
+		mkdir f\ \ g
+			当前目录下创建空目录f  g
+		mkdir -p h/i/j
+			当前目录下创建空目h/i/j
+		tree
+			树状显示目录结构
+	删除(rmdir 、rm -r )
+		rm -r c
+			删除当前目录下的c目录
+		rm -rf a
+			前置删除当前目录下的a目录
+	复制(cp)
+		注意:复制目录时候需要加-r
+		 cp -r h b     复制h目录到b目录中(b目录存在)
+		 cp -r  h i    复制h目录到当前目录下并且命名为i(i目录不存在)
+	移动(mv)
+		mv b h         剪切当前目录下的b目录到h目录中(h目录存在)
+		mv h j         重命名h目录为j目录(j目录不存在)
+
+	/opt
+	+------A
+	|      +---A1
+	|      +---A2
+	|
+	+------B
+		   +---C
+		   +---D
+		   
