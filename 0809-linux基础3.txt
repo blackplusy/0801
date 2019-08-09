@@ -138,7 +138,79 @@ vi
 		4.目录切换到/opt下的解压后的目录
 		5.执行该目录下的vmware-install.pl
 			./vmware-install.pl
-			
+
+7.用户和权限
+	a.用户
+		/etc/passwd     用户配置文件
+		/etc/shadow  	密码配置文件     
+		/etc/group      组配置文件
+		创建
+			useradd simon   创建用户simon
+			passwd  simon   给用户simon设置密码
+		修改
+			usermod -L simon  锁定用户simon
+			usermod -U simon  解锁用户simon
+		删除
+			userdel -r simon  删除simon用户
+
+	b.权限
+		1>查看权限(ls -l)
+		ls -l install.log
+			-rw-r--r-- 1 root root 35679 08-08 11:10 install.log
+		2>文件属性信息
+			1.文件类型
+				-  普通文件
+				d  目录
+			2-10.文件权限
+			11.文件节点
+			12.文件拥有者
+			13.文件拥有组
+			14.文件大小
+			15.最后修改时间
+			16.文件名
+		3>常用权限
+			r:读
+				文件:查看文件内容
+				目录：列表内容
+			w:写
+				文件:修改文件内容
+				目录：在目录下创建、重命名、删除文件
+			x:执行
+				文件:可执行
+				目录:可以进入
+		4>权限分组
+			rw-             r--             r--
+			拥有者权限      拥有组权限       其他人权限
+		5>权限判断
+		 	判断用户是否为文件拥有者，如果是，赋予拥有者权限
+		 	如果不是，判断用户是否为拥有组成员，如果是，赋予拥有组权限
+		 	如果都不是，赋予其他人权限
+		 6>修改权限
+		 	chmod：直接修改权限
+		 		61>字符方式
+		 			u   拥有者
+		 			g   拥有组
+		 			o   其他人
+		 			a   所有人
+		 			chmod u+x install.log       拥有者增加执行权限
+		 			chmod g+x,o+x install.log   拥有组和其他人增加执行权限
+					chmod a-x install.log       所有人取消执行权限
+		 		62>数字方式
+		 			r:4
+		 			w:2
+		 			x:1
+		 			-:0
+		 			chmod 777 install.log 		所有用户拥有读写执行权限
+		 			chmod 000 install.log       所有用户取消读写执行权限
+
+		 	chown：通过修改文件属主来修改权限
+		 		chown simon install.log         修改拥有者为simon
+		 		chown :bin install.log          修改拥有组为bin
+		 		chown root:root install.log     修改拥有者和拥有组为root
+
+
+
+8.日常管理命令
 
 
 
