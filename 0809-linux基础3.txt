@@ -244,3 +244,41 @@ vi
 		前面的输出作为后面的输入
 		 ls /etc/ | grep ^a            搜索/etc目录下a开头的文件
 		 head -7 install.log|tail -1   搜索文件第7行数据
+
+10.rhel中软件安装
+	软件包建议在官网下载
+	光盘中的软件包都在光盘的Server目录中
+	a.安装操作系统
+	b.设置IP、主机名、绑定主机名
+	c.关闭防火墙、selinux
+		关闭防火墙：service iptables stop
+		关闭selinux:
+			vim /etc/selinux/config
+			SELINUX=disabled
+	d.加载光驱
+		右键标签--设置--cd、dvd--使用iso映像文件--选择光盘--确定
+	e.查看光盘对应的目录
+		输入mount命令搜索type是iso9660的对应目录
+	f.进入到光盘所在目录的Server目录
+		 cd /media/RHEL_5.4\ i386\ DVD/Server/
+	g.搜索vsftpd相关软件
+		ls | grep vsftpd
+	h.安装软件
+		rpm -ivh vsftpd-2.0.5-16.el5.i386.rpm
+	i.启动服务
+		service vsftpd start
+	j.测试
+		浏览器中输入ftp://linux的ip，如果出现pub目录说明已经安装好
+	k.文件共享
+		把文件复制到/var/ftp目录下sa
+		cp /etc/passwd /var/ftp
+
+
+
+
+
+
+
+
+
+
