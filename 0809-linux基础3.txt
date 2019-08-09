@@ -98,3 +98,53 @@ vi
 
 
 补充:重启 init 6
+6.包、压缩文件、压缩包
+	a.包：
+		创建的包文件通常以.tar结尾
+		tar -cvf test.tar Desktop install.log
+			创建包文件test.tar,打包内容Desktop和install.log
+		tar -tvf test.tar
+			查看包文件test.tar中打包文件的文件属性信息
+		tar -xvf test.tar
+			解包包文件test.tar到当前目录下
+		tar -xvf test.tar  -C /opt/
+			解包包文件test.tar到指定目录下
+			注意:解包到指定目录下，需要加-C
+	b.压缩文件
+		体积减小
+		du -sh install.log   查看install.log文件大小
+		gzip install.log
+			创建压缩文件
+		gzip -l install.log.gz
+			查看压缩文件的压缩属性信息
+		gzip -d install.log.gz
+			解压压缩文件
+	c.压缩包
+		先打包后压缩
+		tar -cvf test1.tar install.log*
+		gzip test1.tar
+
+		压缩包文件通常以.tar.gz结尾或者以.tgz结尾
+		tar -czvf test2.tgz install.log*
+			创建压缩包文件
+		tar -tzvf test2.tgz
+			查看压缩包文件
+		tar -xzvf test2.tgz
+			解压压缩包文件
+	d.安装vmware-tools
+		1.右键标签--安装vmware-tools
+		2.在弹出的目录中打开终端
+		3.解压VMxxxxx.tar.gz到/opt目录下
+		4.目录切换到/opt下的解压后的目录
+		5.执行该目录下的vmware-install.pl
+			./vmware-install.pl
+			
+
+
+
+
+
+
+
+
+
