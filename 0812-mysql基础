@@ -209,7 +209,34 @@
 		select * from ecs_goods where goods_name='KD876';
 		需求:查询ecs_goods表中商品名称是KD876的本店售价
 		select shop_price from ecs_goods where goods_name='KD876';
-		
+	c.where条件
+		c1>比较
+			>
+			<
+			=
+			>=
+			<=
+			!=
+			<>
+			需求:查询goods表中本店售价高于3000的所有商品的名字
+			select goods_name from ecs_goods where shop_price>3000;
+			需求:查询goods表中商品名称不是KD876的所有信息
+			select * from ecs_goods where goods_name<>'KD876';
+		c2>关系
+			and   同时满足
+			or    满足一个即可
+			not   不满足条件
+			需求:查询goods表中本店售价范围1665和3000之间的所有信息
+			select * from ecs_goods where shop_price>=1665 and shop_price<=3000;
+			需求:查询goods表中商品名称是KD876或者诺基亚的所有信息
+			select * from ecs_goods where goods_name='KD876' or goods_name='诺基亚';
+		c3>区间
+			between...and...
+			包括两个端点。小在前，大在后
+			需求:查询goods表中本店售价范围24和988之间的所有商品名称
+			select goods_name from ecs_goods where shop_price between 24 and 988;
+			
+
 
 
 
