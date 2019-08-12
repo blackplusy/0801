@@ -54,7 +54,7 @@
 		mysql    mysql的客户端服务
 		3306     mysql的端口
 		a1.查看mysql进程是否正常
-			win+r--cmd--taklist | find "mysqld"
+			win+r--cmd--tasklist | find "mysqld"
 			tasklist   任务管理器
 			|          管道，前面的输出作为后面的输入
 			find       搜索
