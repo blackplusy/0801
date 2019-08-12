@@ -166,7 +166,57 @@
 		3>野路子
 		需求:向goods表中新增数据,名字o8ma,价格100，名字nezha，价格3000，名字sadamu，价格5000
 		insert into goods(name,price) values('o8ma',100),('nezha',3000),('sadamu',5000);
+	b.数据的修改
+		语法:update 表 set 列=值 where 条件;
+		注意:
+		字符类型和日期类型必须用单引号
+		数字类型可以直接使用
+		列和值的数据类型必须一致，注意顺序
+		如果不加where条件，默认修改的是整个列的数据，如果增加where条件，修改的是指定行的列的数据
+		需求:修改goods表中名字为ladeng的售价为20
+		update goods set price=20 where dname='ladeng';
+		需求:修改goods表中所有商品价格为0
+		update goods set price=0;
+	c.数据的删除
+		delete    可以删除指定数据，DML,除数据可以找回
+		truncate  只能删除全表数据，DDL,删除数据无法找回
+		delete语法
+			delete from 表 where 条件;
+			如果不加where条件删除的是表中所有数据
+			如果增加where条件删除的是满足条件的行的数据
+			需求:删除goods表中名字为ladeng的所有信息
+			delete from goods where dname='ladeng';
+			需求:删除goods表中所有信息
+			delete from goods;
+		truncate语法
+			truncate table 表;
+			需求:删除goods表中所有信息
+			truncate table goods;
+9.数据的查询
+	http://book.ecmoban.com/images/db.htm
+	a.查询的分类
+		简单查询
+		多表查询
+		子查询
+		分组查询
+	b.简单查询
+		语法:select 列 from 表 where 条件;
+		select后面from前面是和列相关的，where条件是和行相关
+		查询可以查询指定行、指定列、指定行的列
+		需求:查询ecs_goods表中所有的商品名称和本店售价
+		select goods_name,shop_price from ecs_goods;
+		需求:查询ecs_goods表中商品名称是KD876的所有信息
+		select * from ecs_goods where goods_name='KD876';
+		需求:查询ecs_goods表中商品名称是KD876的本店售价
+		select shop_price from ecs_goods where goods_name='KD876';
 		
+
+
+
+
+
+
+
 
 
 
