@@ -92,7 +92,33 @@
 			数据库用户名：root
 			数据库密码：  root
 			数据库名  ：  test
-
+6.SQL(结构化查询语言)
+	DDL:数据库定义语言   create alter drop truncate
+	DML:数据库操作语言   insert update delete
+	DCL:数据库控制语言   grant  revoke
+	DQL:数据库查询语言   select
+7.表结构
+	表结构类似于表格，有行有列，名称
+	a.数据类型
+		字符类型  '123' 'abc'   char  varchar
+		数字类型  123 456       int
+		日期类型  '2019-01-01'  date
+		注意：char是定长，varchar是变长
+	b.表结构的创建
+		语法:create table 表 (
+				列 数据类型，
+				列 数据类型，
+				....
+		);
+		需求:创建表商品(goods),商品价格(price) 数字类型,商品名称(name) 字符类型,出厂日期(ddate) 日期类型
+		create table goods(
+			price int,
+			name  char(10),
+			ddate date
+		);
+		查看表结构
+		desc 表名;
+		desc goods;
 
 
 
