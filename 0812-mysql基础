@@ -48,7 +48,43 @@
 			nginx     轻量级web服务器(负载均衡、反向代理)
 			iis       微软
 		数据库服务器
-5.
+5.mysql基础
+	a.mysql的服务和端口
+		mysqld   mysql的主服务
+		mysql    mysql的客户端服务
+		3306     mysql的端口
+		a1.查看mysql进程是否正常
+			win+r--cmd--taklist | find "mysqld"
+			tasklist   任务管理器
+			|          管道，前面的输出作为后面的输入
+			find       搜索
+		a2.查看mysql端口是否正常
+			win+r--cmd--netstat -an | find "3306"
+	b.mysql的登陆
+		b1.mysql的登陆命令(命令提示符:win+r--cmd)
+			mysql
+				登陆本地数据库
+			mysql -u root -p
+				管理员登陆本地数据库
+			mysql -h 127.0.0.1 -u root -p
+				管理员登陆IP为127.0.0.1的数据库
+		b2.mysql的登陆方式
+			进入到mysql的bin文件夹
+				d:
+				cd phpStudy\MySQL\bin
+			设置环境变量
+				计算机--属性--高级--环境变量--系统变量--Path中添加mysql的bin文件夹路径
+				;D:\phpStudy\MySQL\bin
+				确定--确定--确定
+	c.mysql的基础命令
+		数据库分为数据库软件和数据库数据
+		数据库是由表组成
+		表由数据组成
+		show databases;    查看当前有哪些数据库
+		select database(); 显示当前数据库的名字
+		use mysql;         数据库切换为mysql
+		show tables;       显示当前数据库中有哪些表
+		select * from user;查看user表中所有的数据
 
 
 
