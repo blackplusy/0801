@@ -1,0 +1,58 @@
+1.什么是数据库
+	存储数据
+2.常见的数据库软件
+	关系型数据库
+		informix IBM+HP 军、政、运、银 小机
+		db2      IBM    军、政、运、银 
+		oracle   甲骨文  中大型企业  
+		mysql    甲骨文  互联网公司
+		sqlserver 微软   
+	非关系型数据库
+		mongodb  大数据、爬虫
+		redis    缓存、消息队列
+		cassandra facebook
+3.集成工具
+	a.mysql的安装
+	b.集成工具(网站web服务器+数据库+开发语言)
+		xampp   
+			x:任意操作系统
+			a:apache
+			m:mysql
+			p:php
+			p:perl
+		wamp
+			w:windows
+		phpstudy
+	c.phpstudy文件夹简介
+		apache
+			bin 	存放apache命令的位置
+			conf    存放apache配置文件的位置
+			logs    存放日志文件的位置
+		mysql
+			bin     存放mysql命令的位置
+			data    存放mysql数据的位置
+		www         项目存放的位置
+4.b/s架构的后端组成
+	a.常见软件架构
+		单机
+		b/s
+		c/s
+	b.b/s架构后端组成
+		操作系统
+			unix
+			linux
+			windows
+		web服务器
+			apache    不支持java
+			tomcat    支持java
+			nginx     轻量级web服务器(负载均衡、反向代理)
+			iis       微软
+		数据库服务器
+5.
+
+
+
+
+
+
+
