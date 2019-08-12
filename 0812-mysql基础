@@ -54,7 +54,7 @@
 		mysql    mysql的客户端服务
 		3306     mysql的端口
 		a1.查看mysql进程是否正常
-			win+r--cmd--tasklist | find "mysqld"
+			win+r--cmd--taklist | find "mysqld"
 			tasklist   任务管理器
 			|          管道，前面的输出作为后面的输入
 			find       搜索
@@ -85,6 +85,13 @@
 		use mysql;         数据库切换为mysql
 		show tables;       显示当前数据库中有哪些表
 		select * from user;查看user表中所有的数据
+	d.安装部署ecshop项目
+		1.解压ecshop压缩包
+		2.复制解压后的文件夹到WWW文件夹下
+		3.浏览器中输入127.0.0.1/ecshop按照提示进行安装
+			数据库用户名：root
+			数据库密码：  root
+			数据库名  ：  test
 
 
 
