@@ -119,6 +119,54 @@
 		查看表结构
 		desc 表名;
 		desc goods;
+	c.表结构的修改
+		增加列
+			需求:user表中增加注册日期(ddate) 日期类型
+			alter table user add ddate date;
+		修改列
+			需求:user表中注册日期修改为字符类型
+			alter table user modify ddate char(10);
+		删除列
+			需求:user表中删除注册日期列
+			alter table user drop column ddate ;
+	d.表结构的删除
+		语法:drop table 表;
+		需求:删除表user
+			drop table user;
+	e.约束
+		主键:列中的数据唯一的，每张表中只能由一个，非空
+		唯一:列中的数据是唯一的，可以为空的作为主键约束的补充
+		非空:列中的数据不能为空
+		检查:列中的数据是否满足条件
+		外键:列中的数据依赖于另外表中的数据
+
+		语法:
+		create table 表(
+			列  数据类型 primary key,
+			列  数据类型 unique,
+			列  数据类型 check(检查条件),
+			列  数据类型 not null,
+			列  数据类型 references 被参考表(被参考列)
+		);
+
+8.数据的增删改
+	a.数据的新增
+		注意:
+		字符类型和日期类型必须用单引号
+		数字类型可以直接使用
+		列和值的数据类型必须一致，注意顺序
+		1>向表中所有列新增数据
+		语法:insert into 表 values(值1,值2,值3....);
+		需求:向goods表中新增数据,商品名称heygor,价格2000,出厂日期2000-01-01
+		insert into goods values(2000,'heygor','2000-01-01');
+		2>向表中指定列新增数据
+		语法:insert into 表(列1,列2) values(值1,值2);
+		需求:向goods表中新增数据，名字为ladeng,价格2500
+		insert into goods(name,price) values('ladeng',2500);
+		3>野路子
+		需求:向goods表中新增数据,名字o8ma,价格100，名字nezha，价格3000，名字sadamu，价格5000
+		insert into goods(name,price) values('o8ma',100),('nezha',3000),('sadamu',5000);
+		
 
 
 
