@@ -113,6 +113,50 @@
 			round   小数点后保留
 			select avg(shop_price),round(avg(shop_price),2) from ecs_goods;
 
+10.多表查询
+	当一张表无法满足条件的时候，使用多表查询
+	a.笛卡尔积(集)
+		两张表不做任何关联产生的数据，导致数据量成倍增加，无效数据也增加,为了避免此类情况引入内联查询、外联查询
+		select * from ecs_goods;
+		select * from ecs_category;
+		select * from ecs_goods ,ecs_category ;
+	b.内联查询
+		select 列  from  表1,表2 where 表1.列=表2.列;
+		select 列 from 表1 inner join 表2 on 表1.列=表2.列;
+		判断关联列的方法
+			名字相同
+			作用相同
+			主外键关系
+		需求:查询商品名称是KD876的分类名称
+		1.分析列
+			商品名称
+			分类名称
+		2.分析表
+			商品名称  ecs_goods
+			分类名称  ecs_category
+		3.关联
+			select * from ecs_goods,ecs_category
+			where ecs_category.cat_id=ecs_goods.cat_id;
+		4.过滤
+			select cat_name from ecs_goods,ecs_category
+			where ecs_category.cat_id=ecs_goods.cat_id
+			and goods_name='KD876';
+		需求:查询分类名称3G手机的商品名称
+		1.分析列
+			分类名称
+			商品名称
+		2.分析表
+			商品名称  ecs_goods
+			分类名称  ecs_category
+		3.关联
+			select * from ecs_goods g,ecs_category c
+			where g.cat_id=c.cat_id;
+		4.过滤
+			select g.goods_name,cat_id from ecs_goods g,ecs_category c
+			where g.cat_id=c.cat_id
+			and c.cat_name='3G手机';			
+
+
 
 
 
