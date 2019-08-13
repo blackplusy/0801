@@ -197,7 +197,14 @@
 	select s.s#,s.sname  from s,sc,c where s.s#=sc.s# and sc.c#=c.c#
 	and c.cname='Maths';
 	select s# from sc where c# in ('C2','C4');
-	
 
-
-
+11.导入sakila数据库
+	下载地址:https://dev.mysql.com/doc/index-other.html
+	a.解压下载后的压缩包
+	b.命令提示符进入解压后的文件夹
+	c.登陆mysql数据库
+		mysql -u root -p
+	d.导入sakila-schema.sql
+		source sakila-schema.sql;
+	e.导入sakila-data.sql
+		source sakila-data.sql;
