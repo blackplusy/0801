@@ -157,9 +157,27 @@
 			and c.cat_name='3G手机';			
 
 	需求1:查询分类名称是3G手机或者服装的商品名称有哪些
-
-        需求2：查询商品本店售价范围在2000和3000之间所有的商品的分类名称 
-
+	分析列：
+		分类名称
+		商品名称
+	分析表:
+		ecs_goods
+		ecs_category
+	关联
+		select * from ecs_category c,ecs_goods g
+		where c.cat_id=g.cat_id;
+	过滤
+		select g.goods_name from ecs_category c,ecs_goods g
+		where c.cat_id=g.cat_id
+		and c.cat_name='3G手机' or c.cat_name='服装';	
+    需求2：查询商品本店售价范围在2000和3000之间所有的商品的分类名称 
+ 	关联
+		select * from ecs_category c,ecs_goods g
+		where c.cat_id=g.cat_id;   
+	过滤
+		select distinct c.cat_name from ecs_category c,ecs_goods g
+		where c.cat_id=g.cat_id
+		and g.shop_price between 2000 and 3000;
 
 
 
