@@ -1,0 +1,120 @@
+1.常见的数据库软件
+	oracle
+	mysql
+	sqlserver
+	mongodb
+	redis
+2.mysql的服务和端口
+	mysql的主服务   mysqld
+	mysql的端口     3306
+
+	tasklist | find "mysqld"
+	netstat -an | find "3306"
+3.mysql登陆
+	mysql
+	mysql -u root -p
+	mysql -h 127.0.0.1 -u root -p
+4.基础命令
+	show databases;
+	select database();
+	use test;
+	show tables;
+	select * from ecs_goods;
+5.sql
+	DDL:   create alter drop truncate
+	DML:   insert update delete
+	DCL:   grant revoke
+	DQL:   select
+6.管理mysql常用工具
+	mysql workbench
+	sqlyog          小海豚
+	phpmyadmin
+	dbeaver
+	navicat
+7.表结构
+	create table 表(
+		列  数据类型,
+		列  数据类型
+	);
+	alter table 表 add 列 数据类型;
+	alter table 表 modify 列 数据类型;
+	alter table 表 drop column 列;
+	alter table 表 change 列  新列 数据类型;
+	drop table 表;
+	约束
+		主键
+		唯一
+		非空
+		检查
+		外键
+
+	外键约束需要注意
+	1.被参考表的被参考列一定是存在
+	2.参考列和被参考列的数据类型必须一致
+	3.被参考列设置为主键约束
+
+8.数据的增删改
+	insert into 表 values(值1,值2....);
+	update 表 set 列=值 where 条件;
+	delete from 表 where 条件;
+	truncate table 表;
+9.数据的查询
+	查询的分类
+		简单
+		多表
+		分组
+		子
+	简单查询
+		select 列 from 表 where 条件;
+	where条件
+		a.比较
+			>
+			<
+			=
+			>=
+			<=
+			!=
+			<>
+		b.关系
+			and
+			or
+			not
+		c.区间
+			between...and...
+		d.模糊查询
+			当信息不完整时候使用
+			like   关键字
+			_      一个字符
+			%      任意个字符
+			需求:搜索ecs_goods表中商品名称是诺基亚开头的所有信息
+			select * from ecs_goods where goods_name like '诺基亚%';
+			需求:搜索ecs_goods表中商品名称是6结尾的所有信息
+			select * from ecs_goods where goods_name like '%6';
+			需求:搜索ecs_goods表中商品名称是6个字符的所有信息
+			select * from ecs_goods where goods_name like '______';
+		e.空值查询
+			空(null)是没有任何数据类型没有任何值,不能用于比较和运算，查询时候使用
+			is null 或者is not null
+			null=null
+			null+1>null
+			需求:查询ecs_goods表中suppliers_id非空的所有信息
+			select * from ecs_goods where suppliers_id is not null;
+			需求:查询ecs_goods表中suppliers_id为空的所有信息
+			select * from ecs_goods where suppliers_id is null;
+		f.in
+			在....里面，或的关系
+			需求:查询ecs_goods表中商品名称是KD876或者诺基亚的所有信息
+			select * from ecs_goods where goods_name in('KD876','诺基亚');
+		g.常用函数
+			lower   小写
+			upper   大写
+			select goods_name,lower(goods_name),upper(goods_name) from ecs_goods;
+			avg     查看平均值
+			round   小数点后保留
+			select avg(shop_price),round(avg(shop_price),2) from ecs_goods;
+
+
+
+
+
+
