@@ -178,8 +178,26 @@
 		select distinct c.cat_name from ecs_category c,ecs_goods g
 		where c.cat_id=g.cat_id
 		and g.shop_price between 2000 and 3000;
+--1.jpg
+	select * from test1 where department='计算机系' and place='北京';
+	update test1 set department='信息学院' where department='计算机系';
+	select t1.no,t1.name,t2.grade,t2.courses  from test1 t1,test2 t2 where t1.no=t2.no and t2.grade>=75;
 
-
+--2.jpg
+	select s.name  from student s,achievement a where s.id=a.id
+	and a.mark>85;
+	select count(id) from achievement where mark>=90;
+	insert into achievement values(7,80);
+	update achievement set mark=87 where id=3;
+	delete from student where name='Betty';
+	delete from achievement where id=6;
+--3.jpg
+	select s#,grade from sc where c#='C2';
+	select sname from s where sname like 'D%';
+	select s.s#,s.sname  from s,sc,c where s.s#=sc.s# and sc.c#=c.c#
+	and c.cname='Maths';
+	select s# from sc where c# in ('C2','C4');
+	
 
 
 
