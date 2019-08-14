@@ -60,7 +60,68 @@ select country_id from city where city_id in (select city_id from  address where
 4.查询国家表中country_id为上面查询出来的国家名称
 select country from country where country_id in (select country_id from city where city_id in (select city_id from  address where address_id in (select address_id from customer where first_name='MARY')));
 
+--5.bmp
+select avg(english) from mark;
+select m.math,c.name,c.address,c.telno   from cust c,mark m
+where c.studentno=m.studentno
+and c.studentno in (11,22,33,44,55);
 
+--6.jpg
+create table user(
+	userid int(11) primary key,
+	username varchar2(20) not null,
+	password varchar2(20) not null,
+	crtime   date  not null
+);
 
+insert into user values(1002,'admin','admin','2015-01-01');
 
+--7.jpg
+1.
+查询c表中满足条件c#
+select c# from c where cn='税收基础';
+查询sc表中c#为上面查询出来结果的s#
+select s# from sc where c# in (select c# from c where cn='税收基础');
+查询s表中s#为上面查询出来的学号和姓名
+select sn,s# from s where s# in (select s# from sc where c# in (select c# from c where cn='税收基础'));
+2.
+select s# from sc where c#='C2';
+select sn,sd from s where s# in (select s# from sc where c#='C2');
+3.
+select sn,sd from s where s# in (select s# from sc where c#!='C5');
 
+----------------------------------------------------------------------------------
+分组查询
+按照某种条件、属性进行归类
+a.分组函数(聚合)
+	max()   	最大
+	min() 		最小
+	avg()       平均
+	sum()       求和
+	count()     计数
+分组函数通常和分组一起使用，也可以单独使用
+查询ecs_goods表中最高本店售价,最低，平均
+	select max(shop_price),min(shop_price),avg(shop_price) from ecs_goods;
+查询ecs_goods表中本店售价最高的商品名字
+	select max(shop_price) from ecs_goods;
+	select goods_name from ecs_goods where shop_price=(select max(shop_price) from ecs_goods);
+b.分组查询
+	语法:select 列 from 表 where 条件
+			group by 分组条件
+				having 分组后过滤条件;
+	每后面跟的就是分组条件
+	需求:查询ecs_goods表中每种分类id对应多少种商品
+	select cat_id,count(goods_name) from ecs_goods group by cat_id;
+	需求:查询ecs_goods表中每种分类名称有多少种商品,要求显示分类名称和商品数量
+	select c.cat_name,count(g.goods_name) from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id
+	group by c.cat_name;
+
+c.分组后过滤
+	where   分组前过滤，不能直接跟分组函数
+	having  分组后过滤，可以直接跟分组函数
+	需求:查询商品数量超过10的分类名称
+	select c.cat_name from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id
+	group by c.cat_name
+	having count(g.goods_name)>10;
