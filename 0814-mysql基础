@@ -1,0 +1,43 @@
+子查询
+一条SQL语句的执行依赖于另外一条SQL语句的执行结果
+子查询可以用于数据的新增，修改、删除、查询
+需求:查询商品名称是KD876的分类名称
+分析列
+	商品名称
+	分类名称
+分析表
+	ecs_goods
+	ecs_category
+a.查询ecs_goods表中满足条件的cat_id
+select cat_id from ecs_goods where goods_name='KD876';
+
+b.查询ecs_category表中cat_id为上面查询出来结果的分类名称
+select cat_name from ecs_category where cat_id=(select cat_id from ecs_goods where goods_name='KD876');
+
+--2.jpg
+3.insert into achievement values((select id from student where name='Robert'),80);
+4.update achievement set mark=87 where id=(select id from student where name='Rose');
+5.
+delete from achievement where id=(select id from student where name='Betty');
+delete from student where name='Betty';
+
+子查询分为单行子查询、多行子查询
+单行子查询：子查询返回的结果是一行，可以使用in或者=
+多行子查询：子查询返回的结果是多行，只能用in
+
+需求:查询商品名称以诺基亚开头的商品的分类名称
+a.查询ecs_goods表中满足条件的cat_id
+select cat_id from ecs_goods where goods_name like '诺基亚%';
+
+b.查询ecs_category表中cat_id为上面查询出来结果的cat_name
+select cat_name from ecs_category where cat_id=(select cat_id from ecs_goods where goods_name like '诺基亚%');
+
+
+查询以C开头的国家有哪些城市?
+
+
+查询客户表中名字为MARY的所在城市?
+
+
+查询客户表中名字为MARY的所在国家?
+
