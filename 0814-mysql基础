@@ -34,10 +34,33 @@ select cat_name from ecs_category where cat_id=(select cat_id from ecs_goods whe
 
 
 查询以C开头的国家有哪些城市?
+1.查询国家表中满足条件的country_id
+select country_id from country where country like 'C%';
+2.查询城市表中country_id为上面查询出来结果的城市
+select city from city where country_id in (select country_id from country where country like 'C%');
 
 
 查询客户表中名字为MARY的所在城市?
+1.查询客户表中满足条件的address_id
+select address_id from customer where first_name='MARY';
+2.查询地址表中address_id为上面查询出来的city_id
+select city_id from  address where address_id in (select address_id from customer where first_name='MARY');
+3.查询城市表中city_id为上面查询出来结果的城市
+select city from city where city_id in (select city_id from  address where address_id in (select address_id from customer where first_name='MARY'));
+
 
 
 查询客户表中名字为MARY的所在国家?
+1.查询客户表中满足条件的address_id
+select address_id from customer where first_name='MARY';
+2.查询地址表中address_id为上面查询出来的city_id
+select city_id from  address where address_id in (select address_id from customer where first_name='MARY');
+3.查询城市表中city_id为上面查询出来结果的country_id
+select country_id from city where city_id in (select city_id from  address where address_id in (select address_id from customer where first_name='MARY'));
+4.查询国家表中country_id为上面查询出来的国家名称
+select country from country where country_id in (select country_id from city where city_id in (select city_id from  address where address_id in (select address_id from customer where first_name='MARY')));
+
+
+
+
 
