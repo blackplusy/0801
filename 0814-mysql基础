@@ -126,8 +126,56 @@ c.分组后过滤
 	group by c.cat_name
 	having count(g.goods_name)>10;
 
+
 查询每个城市有多少个客户(统计客户id),要求显示城市名称,客户数量
+select * from city c,address a,customer cu
+where c.city_id=a.city_id
+and a.address_id=cu.address_id;
+
+select c.city,count(cu.customer_id) from city c,address a,customer cu
+where c.city_id=a.city_id
+and a.address_id=cu.address_id
+group by c.city;
 
 查询C开头的国家,每个国家有多少个城市
+select co.country,count(c.city) from city c,country co 
+where c.country_id=co.country_id
+and co.country like 'C%'
+group by co.country;
 
 查询城市数量超过50的国家名称
+
+select co.country,count(c.city) from city c,country co 
+where c.country_id=co.country_id
+group by co.country
+having count(c.city)>50;
+
+
+--3.png
+select * from dt_pay where salary>(select avg(salary) from dt_pay);
+select * from dt_pay;
+truncate table dt_pay;
+
+--8.jpg
+1.
+create table store_information (
+	name char(10),
+	sales int,
+	Date  date
+);
+
+2.alter table store_information add Memo char(20);
+3.
+alter table store_information change name store_name char(20);
+update store_information  set store_name=replace(store_name,'店','分店');
+4.
+select store_name,Date,avg(sales) from store_information
+group by store_name,Date;
+5.
+select  store_name from store_information
+group by store_name
+having sum(sales)>1000000;
+
+--7.jpg
+select s# from sc group by s# having count(c#)>5;
+select s#,sd from s where s# in (select s# from sc group by s# having count(c#)>5);
