@@ -179,3 +179,30 @@ having sum(sales)>1000000;
 --7.jpg
 select s# from sc group by s# having count(c#)>5;
 select s#,sd from s where s# in (select s# from sc group by s# having count(c#)>5);
+
+排序和分页
+a.排序
+	语法：
+	select 列 from 表
+		where 条件
+			group by 分组条件
+				having 分组后过滤条件
+					order by 排序条件
+	排序条件
+		顺序(从小到大)
+			order by 列;
+			order by 列 asc;
+		倒序(从大到小)
+			order by 列 desc;
+	需求:查询ecs_goods表中所有数据，按照本店售价顺序从小到大进行排列
+		select * from ecs_goods order by shop_price;
+	需求:查询ecs_goods表中所有数据，按照商品id从大到小进行排列
+		select * from ecs_goods order by goods_id desc;
+b.分页
+	limit
+	查询ecs_goods表中前10条数据
+	select * from ecs_goods limit 10;
+	查询ecs_goods表中11-20行数据
+	select * from ecs_goods limit 10,10;
+
+
