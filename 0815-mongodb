@@ -54,3 +54,35 @@ b.mongodb的服务
 		3>检查服务和端口
 			tasklist | find "mongod"
 			netstat -an | find "27017"
+	b2.登陆mongodb
+		命令
+			mongo
+				登陆本地test数据库
+			mongo 127.0.0.1/admin
+				登陆IP为127.0.0.1的admin数据库
+			mongo 127.0.0.1:27017/admin
+				登陆IP为127.0.0.1端口为27017的admin数据库
+c.基础命令
+	mongodb   mysql
+	数据库    数据库
+	集合      表
+	文档      数据
+	show databases
+	show dbs
+	                查看当前有哪些数据库
+	db              查看当前数据库的名字
+	use local       数据库切换为local
+	show tables
+	show collections
+					查看当前数据库中有哪些集合
+	db.startup_log.find()
+					查看startup_log集合中所有文档
+d.CURD(增删改查)
+	文档的新增
+		db.xiyouji.insert({name:'5kong',age:800,favor:'hit'})
+	文档的查看
+		db.xiyouji.find({age:18})
+	文档的修改
+		db.xiyouji.update({name:'tangsir'},{$set:{age:800}})
+	文档的删除
+		db.xiyouji.remove({name:'tangsir'})
