@@ -140,5 +140,22 @@ h.查询表达式
 		db.xiyouji.find({age:{$type:1}})
 	h5.in
 		 db.xiyouji.find({name:{$in:['tangsir','shasir']}})
-
-
+	h6.正则表达式
+		db.xiyouji.find({name:{$regex:/^5/}})
+		db.xiyouji.find({name:{$regex:/r$/}})
+		db.xiyouji.find({name:{$regex:/si/}})
+	h7.空值查询
+		db.xiyouji.find({name:{$not:{$type:10}}})
+		db.xiyouji.find({name:{$type:10}})
+		db.xiyouji.find({name:null})
+		db.xiyouji.find({name:{$ne:null}})
+i.文档的更新(修改)
+	修改指定文档
+		$set
+		db.xiyouji.update({name:'5kong'},{$set:{age:100}})
+	覆盖文档
+		db.xiyouji.update({name:'tangsir'},{age:99})
+	重命名列
+		db.xiyouji.update({name:'5kong'},{$rename:{'age':'nianling'}})
+	多行修改
+		db.xiyouji.update({name:'gaga'},{$set:{age:100}},{multi:true})
