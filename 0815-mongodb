@@ -1,0 +1,56 @@
+a.png
+select z.姓名,t.图书名,t.出版社 from 图书 t,作者 z
+where t.作者编号=z.作者编号
+and z.年龄>(select avg(年龄) from 作者);
+
+华为.jpg
+select * from student order by ssex;
+select * from score where degree between 80 and 100;
+
+2.png
+select count(*) from table1;
+select  t2.家庭住址 from table1 t1,table2 t2
+where t1.学生id=t2.学生id
+and t1.姓名 like '张%' 
+and t1.性别='女'
+order by t1.姓名;
+
+4.png
+select xm,zkzh from tb_student where score>0 and score<5;
+select * from tb_student where xm='张三' and score=5;
+
+select c.成绩表  from 学生表 x,成绩表 c
+where x.准考证号=c.准考证号
+and x.年龄 between 20 and 35
+order by 准考证号 desc;
+----------------------------------------------------------
+1.mongodb
+a.下载和安装
+	下载地址
+	https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.0.zip
+	注意:主机操作系统类型，位数
+	a1.下载mongodb软件包
+	a2.解压下载后的安装包
+	a3.设置环境变量
+		计算机--属性--高级--环境变量--系统变量--Path中添加
+		;D:\share\mongodb-win32-x86_64-2008plus-ssl-4.0.10\bin
+		确定--确定--确定
+b.mongodb的服务
+	c(客户端)--------s(服务器)
+	mongo            mongod
+	mongod   	mongodb的主服务
+	mongo     	mongodb的客户端服务
+	27017       mongodb的端口
+	b1.启动服务
+		1>启动命令(命令提示符:win+r--cmd)
+			注意:数据存放文件夹一定要存在
+			mongod --dbpath d:\data
+			mongod --dbpath d:\data --logpath d:\data\mongo.log
+			--dbpath 	存放数据的路径(文件夹)
+			--logpath   存放日志的位置(文件)
+		2>启动方式
+			设置环境变量
+			进入到命令所在文件夹
+		3>检查服务和端口
+			tasklist | find "mongod"
+			netstat -an | find "27017"
