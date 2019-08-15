@@ -100,3 +100,45 @@ f.文档的删除
 		db.xiyouji.remove({name:'5kong'})
 	删除所有文档
 		db.xiyouji.remove({})
+g.文档的查询
+	查询集合中所有文档
+		db.xiyouji.find()
+	查询集合中指定文档
+		db.xiyouji.find({name:'tangsir'})
+	查询集合中指定文档的指定属性
+		db.xiyouji.find({name:'5kong'},{_id:0,age:1})
+h.查询表达式
+	https://docs.mongodb.com/manual/reference/operator/query/
+	h1.比较运算符
+		$gt  	大于
+		$gte    大于等于
+		$lt     小于
+		$lte    小于等于
+		$ne     不等于
+		db.xiyouji.find({age:{$gt:10}})
+		db.xiyouji.find({name:{$ne:'5kong'}})
+	h2.关系运算符
+		$and 	同时满足条件
+		$or     满足一个条件即可
+		$not    不满足条件
+		db.xiyouji.find({$and:[{age:{$lt:100}},{name:'5kong'}]},{_id:0,name:1})
+		db.xiyouji.find({$or:[{name:'tangsir'},{name:'shasir'}]})
+	h3.存在性
+		$exists
+		db.xiyouji.find({age:{$exists:0}})
+	h4.数据类型判断
+		$type
+		1:数字
+		2:字符串
+		3:对象
+		4:数组
+		5:二进制数据
+		7.对象id
+		8.布尔
+		9.日期
+		10.空
+		db.xiyouji.find({age:{$type:1}})
+	h5.in
+		 db.xiyouji.find({name:{$in:['tangsir','shasir']}})
+
+
