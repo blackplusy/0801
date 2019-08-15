@@ -86,3 +86,17 @@ d.CURD(增删改查)
 		db.xiyouji.update({name:'tangsir'},{$set:{age:800}})
 	文档的删除
 		db.xiyouji.remove({name:'tangsir'})
+e.文档的新增
+	新增普通文档
+		db.xiyouji.insert({name:'8jie'})
+	新增文档指定_id
+		db.xiyouji.insert({name:'white drgon horse',_id:0})
+	新增内嵌文档
+		db.xiyouji.insert({name:'5kong',jingli:{kill:100,hit:3}})
+	新增多个文档
+		db.xiyouji.insert([{name:'nezha'},{name:'tai2'},{name:'redhair'}])
+f.文档的删除
+	删除指定文档
+		db.xiyouji.remove({name:'5kong'})
+	删除所有文档
+		db.xiyouji.remove({})
