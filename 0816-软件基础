@@ -39,6 +39,47 @@ c.c/s架构软件
 		ui   美化
 	后端(b/s)
 		操作系统
+			win
+			linux
+			unix
 		web服务器
+			apache
+			nginx
+			tomcat
+			iis
 		数据库服务器
+			oracle
+			mysql
+3.访问网站的过程
+	1>浏览器中输入域名:www.sina.com.cn
+	2>系统到hosts文件中搜索是否有www.sina.com.cn对应的IP
+	3>数据通过网络传输到DNS(域名解析)服务器，把域名解析为IP
+	4>数据通过网络传输到对应IP的web服务器
+	5>web服务器解析请求，发送请求数据给数据库
+	6>数据库返回所请求的数据，web服务器进行整合，返回浏览器
+4.URL组成
+	URL:统一资源定位器
+	http://192.168.7.80:81/ecshop/category.php?id=3
+	1>协议     http://
+	2>域名、IP  192.168.7.80
+	3>端口     81
+	4>虚拟目录 ecshop
+	5>访问文件 category.php
+	6>访问参数 ?id=3
+	a.协议
+		一组规则规范
+		http协议(超文本传输协议):规定了数据在传输中先传输什么，后传输什么，怎样传输
+		超文本(富文本):声音、图像、视频
+		普通文本
+		http协议特点:无状态(彼此不记录过去的行为)
+		http协议的请求
+			get  我要什么，请求的信息显示在URL上，相对不安全
+			https://s.taobao.com/search?q=lv
+			https://s.taobao.com/search?q=zara
+			post 我给什么，请求的信息显示的请求体上(注册用户、下订单、评论)
+		cookie
+		session
+
+
+
 
