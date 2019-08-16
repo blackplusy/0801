@@ -117,7 +117,11 @@ c.c/s架构软件
 				web服务器软件版本
 				时间
 			响应体
-
+		b5.fiddler的断点调试
+			安装:傻瓜安装
+				bpu http://127.0.0.1:81/ecshop  设置断点
+				bpu                             取消设置断点
+				bpu http://192.168.7.80:81/ecshop/user.php  设置断点
 
 
 
