@@ -1,0 +1,48 @@
+HeyGor
+Q:914338492
+T:18028768679
+-------------------------------------------------
+1.python的应用领域
+	房产推荐系统
+	a.爬虫---【58、链家、中原】--{价格、地理位置、光线、楼层、朝向、周边设施、评论}
+	b.数据分析--【影响好房子的因素】--｛价格、光线、地理位置｝
+	c.网站----【vip】--{qq\wechat\tel}
+	d.行为分析--【推荐】
+	e.自动化测试
+	f.自动化运维
+
+	1.爬虫开发  
+	2.数据分析
+	3.网站开发
+	4.机器学习
+	5.自动化测试
+	6.自动化运维
+2.python的安装
+	下载地址:www.python.org
+	Downloads --All releases
+	a.python的常见版本
+		python27
+		python36(推荐)
+	b.系统版本
+		x86    			32位操作系统
+		x86_64  x64 	64位操作系统
+	c.安装
+		c1.Add Python To PATH
+		c2.install now
+3.python的开发工具
+	sublime text
+	pycharm
+	eclipse+pydev
+	vi/vim
+4.python的运行环境
+	a.win+r--cmd(命令提示符)--python
+	b.win+r--cmd(命令提示符)--python 文件名
+	注意:python的文件都以.py结尾
+	c.IDE开发工具
+	d.idle
+	
+
+
+
+
+
