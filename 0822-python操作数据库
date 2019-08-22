@@ -1,0 +1,44 @@
+课程目标
+掌握python操作数据库的方法
+
+课程内容
+a.python操作mongodb数据库
+b.python操作mysql数据库
+
+a.python操作mongodb数据库
+使用python操作数据库必须安装对应的模块
+pymongo是python操作mongodb数据库的模块
+sudo pip3 install pymongo
+程序代码如下：
+import pymongo
+#设置连接参数
+conn=pymongo.MongoClient(host='127.0.0.1',port=27017)
+db=conn.test
+db.xiyouji.insert({'name':'heygor'})
+注意：操作mongodb数据库时候，数据库必须已经启动
+
+b.python操作mysql数据库
+1.安装模块
+	a.通过pip安装
+	sudo pip3 install pymysql
+	b.通过压缩包安装
+2.操作数据库
+程序如下：
+
+import pymysql
+conn=pymysql.connect(host='localhost',user='root',passwd='test',db='sakila',port=3306,charset='utf8')
+#连接主机的主机名或者IP host
+#连接使用的用户名       user
+#连接用户使用密码       passwd
+#连接哪个数据库         db
+#连接哪个端口           port
+#字符集                 charset
+cur=conn.cursor()    #定义游标
+cur.execute('select city from city') #所需要指定的语句
+data=cur.fetchall()     #获取语句执行的结果
+for i in data:
+        print(i)
+cur.close()     #关闭游标
+conn.close()   #关闭连接，释放数据库资源
+
+
