@@ -100,6 +100,7 @@
 
 		2.多文件模块
 		安装方法：解压压缩包，进入到文件夹中执行python setup.py install
+		百度搜索pymongo pypi下载安装
 
 		3.easy install 方式
 		easy install 包名字
@@ -107,6 +108,7 @@
 
 		4.pip安装
 		系统中必须安装好pip
+		pip install pymysql
 		
 
 
