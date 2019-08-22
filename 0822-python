@@ -76,6 +76,39 @@
 	sub(100,300)
 
 	jian(20,19)
+	c.os模块的操作
+		import os
+		os.system('dir')            #运行系统中的命令
+		os.remove('D:\\1.txt')     #删除系统中的文件
+		os.getcwd()                 #当前路径
+		print(os.listdir('D:\\'))   #查看指定目录下所有文件
+		print(os.path.split('D:\\mz\\2.txt'))  #返回一个路径的目录和文件名
+		print(os.path.isfile('D:\\2.csv'))     #判断是否是目录
+		os.path.isdir()              #判断是否是目录
+		os.path.exists()             判断是否存在
+	d.sys模块
+		print(sys.version)
+		print(sys.path)
+	e.python中模块的安装
+		1.单文件模块
+		2.多文件模块
+		3.easy install方式
+		4.pip方式
+
+		1.单文件模块
+		安装方法：直接拷贝文件到指定目录$python_dir/Lib
+
+		2.多文件模块
+		安装方法：解压压缩包，进入到文件夹中执行python setup.py install
+
+		3.easy install 方式
+		easy install 包名字
+		easy install 包.egg
+
+		4.pip安装
+		系统中必须安装好pip
+		
+
 
 
 
